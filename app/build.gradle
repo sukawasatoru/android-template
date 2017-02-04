@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        applicationId 'jp.tinyport.myapplication'
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName '1.0'
+
+        jackOptions {
+            enabled false
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            useProguard true
+            shrinkResources true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    splits {
+        density {
+            enable true
+            reset()
+            include 'xhdpi'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    def supportLibraryVersion = '25.1.1'
+    def leakcanaryVersion = '1.5'
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    compile "com.android.support:leanback-v17:$supportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+    debugCompile "com.squareup.leakcanary:leakcanary-android:$leakcanaryVersion"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanaryVersion"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanaryVersion"
+}
