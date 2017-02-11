@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="Theme.Leanback">
-        <item name="android:colorPrimary">@color/search_opaque</item>
-    </style>
+    <style name="AppTheme" parent="Theme.Leanback"/>
 </resources>
