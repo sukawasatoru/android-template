@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+def appId = 'jp.tinyport.myapplication'
+def providerAuthority = appId
+
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
 
     defaultConfig {
-        applicationId 'jp.tinyport.myapplication'
+        applicationId appId
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
@@ -15,6 +18,12 @@ android {
         jackOptions {
             enabled false
         }
+
+        manifestPlaceholders = [
+                providerAuthority: providerAuthority
+        ]
+
+        buildConfigField 'String', 'PROVIDER_AUTHORITY', "\"$providerAuthority\""
     }
 
     buildTypes {
