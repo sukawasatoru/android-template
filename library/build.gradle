@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    publishNonDefault true
+
+    compileSdkVersion android_compile_sdk_version.toInteger()
+    buildToolsVersion android_build_tools_version
+
+    defaultConfig {
+        minSdkVersion android_min_sdk_version.toInteger()
+        targetSdkVersion android_target_sdk_version.toInteger()
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
