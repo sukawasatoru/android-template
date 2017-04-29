@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="InvalidPackage">
+        <!-- https://github.com/gfx/Android-Orma/pull/400 -->
+        <ignore regexp="antlr4-runtime-.*.jar"/>
+    </issue>
+</lint>
