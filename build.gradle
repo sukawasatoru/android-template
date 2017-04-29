@@ -1,6 +1,10 @@
 buildscript {
     repositories {
         jcenter()
+
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
     }
 
     dependencies {
@@ -9,6 +13,9 @@ buildscript {
         classpath 'com.android.tools.build:gradle:2.3.1'
 
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // https://plugins.gradle.org/plugin/net.ltgt.errorprone
+        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.10'
     }
 }
 

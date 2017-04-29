@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'net.ltgt.errorprone'
 
 def appId = 'jp.tinyport.myapplication'
 def providerAuthority = appId
@@ -77,6 +78,7 @@ dependencies {
     debugCompile "com.squareup.leakcanary:leakcanary-android:$leakcanaryVersion"
     releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanaryVersion"
     testCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanaryVersion"
+    errorprone "com.google.errorprone:error_prone_core:$errorprone_version"
 
     [':library'].forEach{
         debugCompile project (path: it, configuration: 'debug')
