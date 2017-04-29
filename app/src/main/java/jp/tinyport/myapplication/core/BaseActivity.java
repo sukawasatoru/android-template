@@ -10,7 +10,7 @@ public class BaseActivity extends Activity {
 
     protected ActivityComponent getComponent() {
         if (sComponent == null) {
-            sComponent = ((App) getApplication()) .getComponent()
+            sComponent = ((App) getApplication()).getComponent()
                     .plus(new ActivityModule());
         }
 

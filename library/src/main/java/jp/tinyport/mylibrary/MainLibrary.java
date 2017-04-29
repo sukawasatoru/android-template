@@ -1,18 +1,18 @@
 package jp.tinyport.mylibrary;
 
-import javax.inject.Inject;
+import android.app.Application;
 
-import jp.tinyport.mylibrary.internal.repository.LibraryOrma;
+import jp.tinyport.mylibrary.internal.di.DaggerLibraryWrapper;
 
 public class MainLibrary {
-    LibraryOrma mOrma;
-
-    @Inject
-    public MainLibrary(LibraryOrma orma) {
-        mOrma = orma;
+    public static void install(Application app) {
+        DaggerLibraryWrapper.install(app);
     }
 
     public static void hello() {
-        throw new UnsupportedOperationException("TODO");
+        DaggerLibraryWrapper.getComponent().getHelloImpl().hello();
+    }
+
+    private MainLibrary() {
     }
 }

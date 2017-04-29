@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import jp.tinyport.myapplication.core.BaseActivity;
 import jp.tinyport.myapplication.core.repository.AppOrma;
+import jp.tinyport.mylibrary.MainLibrary;
 
 public class MainActivity extends BaseActivity {
     @Inject
@@ -18,5 +19,6 @@ public class MainActivity extends BaseActivity {
         getComponent().inject(this);
 
         setContentView(R.layout.activity_main);
+        MainLibrary.hello();
     }
 }

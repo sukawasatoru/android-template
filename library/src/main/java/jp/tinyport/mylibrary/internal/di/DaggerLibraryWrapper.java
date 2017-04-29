@@ -1,10 +1,6 @@
-package jp.tinyport.mylibrary.internal;
+package jp.tinyport.mylibrary.internal.di;
 
 import android.app.Application;
-
-import jp.tinyport.mylibrary.internal.di.DaggerLibraryComponent;
-import jp.tinyport.mylibrary.internal.di.LibraryComponent;
-import jp.tinyport.mylibrary.internal.di.LibraryModule;
 
 public class DaggerLibraryWrapper {
     private static LibraryComponent sComponent;

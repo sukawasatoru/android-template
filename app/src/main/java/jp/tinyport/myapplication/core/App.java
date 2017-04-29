@@ -7,7 +7,7 @@ import com.squareup.leakcanary.LeakCanary;
 import jp.tinyport.myapplication.core.di.AppComponent;
 import jp.tinyport.myapplication.core.di.AppModule;
 import jp.tinyport.myapplication.core.di.DaggerAppComponent;
-import jp.tinyport.mylibrary.internal.DaggerLibraryWrapper;
+import jp.tinyport.mylibrary.MainLibrary;
 
 public class App extends Application {
     private AppComponent mComponent;
@@ -19,7 +19,7 @@ public class App extends Application {
         mComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
-        DaggerLibraryWrapper.install(this);
+        MainLibrary.install(this);
 
         if (LeakCanary.isInAnalyzerProcess(this)) return;
 
