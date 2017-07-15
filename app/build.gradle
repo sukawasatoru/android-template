@@ -2,8 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'net.ltgt.errorprone'
 
-def appId = 'jp.tinyport.myapplication'
-def providerAuthority = appId
+def providerAuthority = app_id
 
 repositories {
     maven {
@@ -16,7 +15,7 @@ android {
     buildToolsVersion android_build_tools_version
 
     defaultConfig {
-        applicationId appId
+        applicationId app_id
         minSdkVersion android_min_sdk_version.toInteger()
         targetSdkVersion android_target_sdk_version.toInteger()
         versionCode 1
