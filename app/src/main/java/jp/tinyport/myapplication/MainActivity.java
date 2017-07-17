@@ -13,7 +13,7 @@ public class MainActivity extends BaseActivity {
     AppOrma mOrma;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getComponent().inject(this);
