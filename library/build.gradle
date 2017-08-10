@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'net.ltgt.errorprone'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     publishNonDefault true
@@ -11,11 +12,15 @@ android {
     defaultConfig {
         minSdkVersion android_min_sdk_version.toInteger()
         targetSdkVersion android_target_sdk_version.toInteger()
+
+        jackOptions {
+            enabled false
+        }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     sourceSets {
