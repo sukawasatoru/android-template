@@ -60,7 +60,7 @@ dependencies {
     compile "com.android.support:leanback-v17:$support_library_version"
     compile "com.android.support:appcompat-v7:$support_library_version"
 
-    // for Oama
+    // for Orma
     compile "com.android.support:support-annotations:$support_library_version"
     compile "com.android.support:support-compat:$support_library_version"
 
