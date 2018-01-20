@@ -1,27 +1,23 @@
 buildscript {
     repositories {
-        jcenter()
-
+        google()
         maven {
             url 'https://plugins.gradle.org/m2/'
         }
+        jcenter()
     }
 
     dependencies {
         classpath "com.android.tools.build:gradle:$android_plugin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "net.ltgt.gradle:gradle-errorprone-plugin:$errorprone_plugin_version"
-        classpath "me.tatarka:gradle-retrolambda:$retrolambda_version"
     }
 }
 
 allprojects {
     repositories {
+        google()
         jcenter()
-
-        maven {
-            url "https://maven.google.com"
-        }
     }
 }
 
