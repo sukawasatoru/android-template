@@ -1,18 +1,12 @@
 pipeline {
-    agent any
+    agent {
+        label 'android'
+    }
 
     stages {
-        stage('Preparing') {
-            steps {
-                fileExists '.git'
-                sh 'git clean -fdx'
-                git(url: 'https://github.com/sukawasatoru/android-template', branch: 'master', changelog: true)
-            }
-        }
-
         stage('Build') {
             steps {
-                sh './gradlew --info --profile --no-daemon build'
+                sh './gradlew --info --profile build'
             }
         }
 
