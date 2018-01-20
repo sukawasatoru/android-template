@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './gradlew --info build'
+                sh './gradlew --info --profile build'
             }
         }
     }
