@@ -1,0 +1,19 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion android_compile_sdk_version.toInteger()
+    buildToolsVersion android_build_tools_version
+
+    defaultConfig {
+        applicationId tiny_app_id
+        minSdkVersion android_min_sdk_version.toInteger()
+        targetSdkVersion android_target_sdk_version.toInteger()
+        versionCode version_code.toInteger()
+        versionName version_name
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
