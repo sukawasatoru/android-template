@@ -8,9 +8,9 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:$android_plugin_version"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "net.ltgt.gradle:gradle-errorprone-plugin:$errorprone_plugin_version"
+        classpath Depend.gradle.android
+        classpath Depend.gradle.kotlin
+        classpath Depend.gradle.errorprone
     }
 }
 
