@@ -1,3 +1,5 @@
+import jp.tinyport.gradle.versioning.AppVersion
+
 apply plugin: 'com.android.application'
 
 android {
@@ -8,8 +10,10 @@ android {
         applicationId tiny_app_id
         minSdkVersion Version.manifest.minSdk
         targetSdkVersion Version.manifest.targetSdk
-        versionCode version_code.toInteger()
-        versionName version_name
+
+        def appVersion = AppVersion.loadAppVersion(project)
+        versionCode appVersion.versionCode
+        versionName appVersion.versionName
     }
 
     compileOptions {
