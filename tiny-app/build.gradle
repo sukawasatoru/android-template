@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion android_compile_sdk_version.toInteger()
-    buildToolsVersion android_build_tools_version
+    compileSdkVersion Version.manifest.compileSdk
+    buildToolsVersion Version.manifest.buildTools
 
     defaultConfig {
         applicationId tiny_app_id
-        minSdkVersion android_min_sdk_version.toInteger()
-        targetSdkVersion android_target_sdk_version.toInteger()
+        minSdkVersion Version.manifest.minSdk
+        targetSdkVersion Version.manifest.targetSdk
         versionCode version_code.toInteger()
         versionName version_name
     }

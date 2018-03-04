@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'net.ltgt.errorprone'
 
 android {
-    compileSdkVersion android_compile_sdk_version.toInteger()
-    buildToolsVersion android_build_tools_version
+    compileSdkVersion Version.manifest.compileSdk
+    buildToolsVersion Version.manifest.buildTools
 
     defaultConfig {
-        minSdkVersion android_min_sdk_version.toInteger()
-        targetSdkVersion android_target_sdk_version.toInteger()
+        minSdkVersion Version.manifest.minSdk
+        targetSdkVersion Version.manifest.targetSdk
     }
 
     compileOptions {
@@ -23,15 +23,15 @@ android {
 
 dependencies {
     // for Orma
-    compile "com.android.support:support-annotations:$support_library_version"
-    compile "com.android.support:support-compat:$support_library_version"
+    implementation Depend.support.annotations
+    implementation Depend.support.compat
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "com.google.dagger:dagger:$dagger_version"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
-    compile "io.reactivex.rxjava2:rxjava:$rxjava_version"
-    compile "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
-    annotationProcessor "com.github.gfx.android.orma:orma-processor:$orma_version"
-    compile "com.github.gfx.android.orma:orma:$orma_version"
-    errorprone "com.google.errorprone:error_prone_core:$errorprone_version"
+    implementation Depend.kotlin
+    implementation Depend.dagger.dagger
+    annotationProcessor Depend.dagger.compiler
+    implementation Depend.rx.java
+    implementation Depend.rx.android
+    implementation Depend.orma.orma
+    annotationProcessor Depend.orma.compiler
+    errorprone Depend.errorprone
 }
