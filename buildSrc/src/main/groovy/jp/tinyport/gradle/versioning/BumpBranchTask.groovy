@@ -1,13 +1,11 @@
 package jp.tinyport.gradle.versioning
 
-import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
-class BumpBranchTask extends DefaultTask {
+class BumpBranchTask extends AbstractVersioningTask {
     @TaskAction
     void bumpBranch() {
-        def version = AppVersion.loadAppVersion(project)
-        version.branch++
-        version.saveAppVersion(project)
+        appVersion.branch++
+        appVersion.saveAppVersion(project)
     }
 }

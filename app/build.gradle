@@ -1,8 +1,7 @@
-import jp.tinyport.gradle.versioning.AppVersion
-
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'net.ltgt.errorprone'
+apply plugin: 'versioning'
 
 def providerAuthority = app_id
 
@@ -14,8 +13,6 @@ android {
         applicationId app_id
         minSdkVersion Version.manifest.minSdk
         targetSdkVersion Version.manifest.targetSdk
-
-        def appVersion = AppVersion.loadAppVersion(project)
         versionCode appVersion.versionCode
         versionName appVersion.versionName
 
