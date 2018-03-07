@@ -3,17 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'net.ltgt.errorprone'
 
 android {
-    compileSdkVersion Version.manifest.compileSdk
-    buildToolsVersion Version.manifest.buildTools
-
     defaultConfig {
         minSdkVersion Version.manifest.minSdk
         targetSdkVersion Version.manifest.targetSdk
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     sourceSets {
