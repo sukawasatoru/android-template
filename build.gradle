@@ -23,17 +23,12 @@ allprojects {
     }
 }
 
-def setupAndroidPlugin = { isCi, isApp, project ->
+def setupAndroidPlugin = { isCi, project ->
     project.android {
         compileSdkVersion Version.manifest.compileSdk
         buildToolsVersion Version.manifest.buildTools
 
         defaultConfig {
-            if (isApp) {
-                versionCode 1
-                versionName '0.A.1.0'
-            }
-
             minSdkVersion Version.manifest.minSdk
             targetSdkVersion Version.manifest.targetSdk
         }
@@ -46,26 +41,18 @@ def setupAndroidPlugin = { isCi, isApp, project ->
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
-
-        if (isApp) {
-            applicationVariants.all {
-                if (it.buildType.name == 'release') {
-                    it.outputs.all {
-                        versionCodeOverride = appVersion.versionCode
-                        versionNameOverride = appVersion.versionName
-                    }
-                }
-            }
-        }
     }
 }.curry(System.getenv('CI') == 'true')
 
 subprojects {
     project.plugins.whenPluginAdded {
-        def isApp = it.class.name == 'com.android.build.gradle.AppPlugin'
-        def isLib = it.class.name == 'com.android.build.gradle.LibraryPlugin'
-        if (isApp || isLib) {
-            setupAndroidPlugin(isApp, project)
+        switch (it.class.name) {
+            case 'com.android.build.gradle.AppPlugin':
+            case 'com.android.build.gradle.LibraryPlugin':
+                setupAndroidPlugin(project)
+                break
+            default:
+                break
         }
     }
 }

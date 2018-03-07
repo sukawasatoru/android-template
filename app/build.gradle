@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'net.ltgt.errorprone'
+apply plugin: 'versioning'
 
 def providerAuthority = app_id
 
 android {
     defaultConfig {
         applicationId app_id
+        versionCode 1
+        versionName '0.A.1.0'
 
         manifestPlaceholders = [
                 providerAuthority: providerAuthority
@@ -35,6 +38,15 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    applicationVariants.all {
+        if (it.buildType.name == 'release') {
+            it.outputs.all {
+                versionCodeOverride = appVersion.versionCode
+                versionNameOverride = appVersion.versionName
+            }
+        }
     }
 }
 
