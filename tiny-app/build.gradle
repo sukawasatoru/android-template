@@ -2,19 +2,18 @@ apply plugin: 'com.android.application'
 apply plugin: 'versioning'
 
 android {
-    compileSdkVersion Version.manifest.compileSdk
-    buildToolsVersion Version.manifest.buildTools
-
     defaultConfig {
         applicationId tiny_app_id
-        minSdkVersion Version.manifest.minSdk
-        targetSdkVersion Version.manifest.targetSdk
-        versionCode appVersion.versionCode
-        versionName appVersion.versionName
+        versionCode 1
+        versionName '0.A.1.0'
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    applicationVariants.all {
+        if (it.buildType.name == 'release') {
+            it.outputs.all {
+                versionCodeOverride = appVersion.versionCode
+                versionNameOverride = appVersion.versionName
+            }
+        }
     }
 }
