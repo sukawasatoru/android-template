@@ -1,20 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'net.ltgt.errorprone'
-apply plugin: 'versioning'
 
 def providerAuthority = app_id
 
 android {
-    compileSdkVersion Version.manifest.compileSdk
-    buildToolsVersion Version.manifest.buildTools
-
     defaultConfig {
         applicationId app_id
-        minSdkVersion Version.manifest.minSdk
-        targetSdkVersion Version.manifest.targetSdk
-        versionCode appVersion.versionCode
-        versionName appVersion.versionName
 
         manifestPlaceholders = [
                 providerAuthority: providerAuthority
@@ -26,8 +18,8 @@ android {
     buildTypes {
         release {
             minifyEnabled true
-            useProguard true
-            shrinkResources true
+            useProguard = true
+            shrinkResources = true
             signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -35,15 +27,10 @@ android {
 
     splits {
         density {
-            enable true
+            enable = true
             reset()
             include 'xhdpi'
         }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     sourceSets {
