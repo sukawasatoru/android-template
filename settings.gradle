@@ -4,6 +4,7 @@ def isCi = System.getenv().containsKey("CI")
 def hasCacheServer = hasProperty('cacheServerUri')
 def hasUser = hasProperty('cacheServerUser')
 
+logger.quiet("CI=${isCi}, hasCacheServer=${hasCacheServer}, hasUser=${hasUser}")
 buildCache {
     local {
         enabled = !isCi
@@ -11,10 +12,12 @@ buildCache {
 
     if (hasCacheServer) {
         remote(HttpBuildCache) {
+            logger.quiet("cacheServerUri=${cacheServerUri}")
             url = cacheServerUri
             push = isCi
 
             if (hasUser) {
+                logger.quiet("cacheServerUser=${cacheServerUser}, cacheServerPassword=${cacheServerPassword}")
                 credentials {
                     username = cacheServerUser
                     password = cacheServerPassword
