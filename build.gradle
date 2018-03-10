@@ -11,6 +11,7 @@ buildscript {
 
     dependencies {
         classpath Depend.gradle.android
+        classpath Depend.gradle.androidCacheFix
         classpath Depend.gradle.kotlin
         classpath Depend.gradle.errorprone
     }
@@ -24,6 +25,7 @@ allprojects {
 }
 
 def setupAndroidPlugin = { isCi, project ->
+    project.apply plugin: 'org.gradle.android.cache-fix'
     project.android {
         compileSdkVersion Version.manifest.compileSdk
         buildToolsVersion Version.manifest.buildTools

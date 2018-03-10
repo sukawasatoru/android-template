@@ -27,6 +27,8 @@ class Depend {
 
     static class Gradle {
         final android = "com.android.tools.build:gradle:$Version.gradle.android"
+        final androidCacheFix =
+                "gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin:$Version.gradle.androidCacheFix"
         final kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$Version.kotlin"
         final errorprone = "net.ltgt.gradle:gradle-errorprone-plugin:$Version.gradle.errorprone"
     }
