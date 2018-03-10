@@ -17,6 +17,7 @@ class Version {
 
     static class Gradle {
         final android = '3.0.1'
+        final androidCacheFix = '0.3.6'
         final errorprone = '0.0.13'
     }
 
