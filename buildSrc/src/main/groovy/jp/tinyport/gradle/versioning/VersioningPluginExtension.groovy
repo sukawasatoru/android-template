@@ -1,10 +1,10 @@
 package jp.tinyport.gradle.versioning
 
 import org.gradle.api.Project
-import org.gradle.api.provider.PropertyState
+import org.gradle.api.provider.Property
 
 class VersioningPluginExtension {
-    final PropertyState<AppVersion> appVersion
+    final Property<AppVersion> appVersion
 
     VersioningPluginExtension(Project project) {
         appVersion = new AppVersionProvider(project)

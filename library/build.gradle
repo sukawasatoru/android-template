@@ -15,15 +15,15 @@ android {
 
 dependencies {
     // for Orma
-    implementation Depend.support.annotations
-    implementation Depend.support.compat
+    implementation Depends.support.annotations
+    implementation Depends.support.compat
 
-    implementation Depend.kotlin
-    implementation Depend.dagger.dagger
-    annotationProcessor Depend.dagger.compiler
-    implementation Depend.rx.java
-    implementation Depend.rx.android
-    implementation Depend.orma.orma
-    annotationProcessor Depend.orma.compiler
-    errorprone Depend.errorprone
+    implementation Depends.kotlin
+    implementation Depends.dagger.dagger
+    annotationProcessor Depends.dagger.compiler
+    implementation Depends.rx.java
+    implementation Depends.rx.android
+    implementation Depends.orma.orma
+    annotationProcessor Depends.orma.compiler
+    errorprone Depends.errorprone
 }
