@@ -1,10 +1,11 @@
 package jp.tinyport.gradle.versioning
 
 import org.gradle.api.Project
-import org.gradle.api.provider.PropertyState
+import org.gradle.api.Transformer
+import org.gradle.api.provider.Property
 import org.gradle.api.provider.Provider
 
-class AppVersionProvider implements PropertyState<AppVersion> {
+class AppVersionProvider implements Property<AppVersion> {
     private final Project project
 
     private AppVersion appVersion
@@ -31,6 +32,16 @@ class AppVersionProvider implements PropertyState<AppVersion> {
     @Override
     AppVersion getOrNull() {
         return appVersion
+    }
+
+    @Override
+    AppVersion getOrElse(AppVersion defaultValue) {
+        return appVersion ?: defaultValue
+    }
+
+    @Override
+    <S> Provider<S> map(Transformer<? extends S, ? super AppVersion> transformer) {
+        throw new UnsupportedOperationException()
     }
 
     @Override

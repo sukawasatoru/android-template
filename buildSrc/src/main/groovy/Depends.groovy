@@ -1,4 +1,4 @@
-class Depend {
+class Depends {
     static final arch = new Arch()
     static final errorprone = "com.google.errorprone:error_prone_core:$Version.errorprone"
     static final dagger = new Dagger()
