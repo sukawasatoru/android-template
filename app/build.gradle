@@ -53,23 +53,23 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     implementation project(':library')
-    implementation Depend.support.leanback
-    implementation Depend.support.compatV7
+    implementation Depends.support.leanback
+    implementation Depends.support.compatV7
 
     // for Orma
-    implementation Depend.support.annotations
-    implementation Depend.support.compat
+    implementation Depends.support.annotations
+    implementation Depends.support.compat
 
-    implementation Depend.glide.glide
-    implementation Depend.glide.okhttp3
-    implementation Depend.dagger.dagger
-    annotationProcessor Depend.dagger.compiler
-    implementation Depend.rx.java
-    implementation Depend.rx.android
-    implementation Depend.orma.orma
-    annotationProcessor Depend.orma.compiler
-    debugImplementation Depend.leakcanary.debug
-    releaseImplementation Depend.leakcanary.release
-    testImplementation Depend.leakcanary.test
-    errorprone Depend.errorprone
+    implementation Depends.glide.glide
+    implementation Depends.glide.okhttp3
+    implementation Depends.dagger.dagger
+    annotationProcessor Depends.dagger.compiler
+    implementation Depends.rx.java
+    implementation Depends.rx.android
+    implementation Depends.orma.orma
+    annotationProcessor Depends.orma.compiler
+    debugImplementation Depends.leakcanary.debug
+    releaseImplementation Depends.leakcanary.release
+    testImplementation Depends.leakcanary.test
+    errorprone Depends.errorprone
 }
