@@ -26,12 +26,12 @@ allprojects {
 
 def setupAndroidPlugin = { isCi, project ->
     project.android {
-        compileSdkVersion Version.manifest.compileSdk
-        buildToolsVersion Version.manifest.buildTools
+        compileSdkVersion Versions.manifest.compileSdk
+        buildToolsVersion Versions.manifest.buildTools
 
         defaultConfig {
-            minSdkVersion Version.manifest.minSdk
-            targetSdkVersion Version.manifest.targetSdk
+            minSdkVersion Versions.manifest.minSdk
+            targetSdkVersion Versions.manifest.targetSdk
         }
 
         dexOptions {
