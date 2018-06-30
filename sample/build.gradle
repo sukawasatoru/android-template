@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'net.ltgt.errorprone'
+apply plugin: 'versioning'
+
+def appId = 'jp.tinyport.example.sample'
+
+android {
+    defaultConfig {
+        applicationId appId
+        versionCode 1
+        versionName '0.A.1.0'
+
+        manifestPlaceholders = [
+                providerAuthority: appId
+        ]
+
+        buildConfigField 'String', 'PROVIDER_AUTHORITY', "\"$appId\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            useProguard = true
+            shrinkResources = true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    splits {
+        density {
+            enable = true
+            reset()
+            include 'xhdpi'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    applicationVariants.all {
+        if (it.buildType.name == 'release') {
+            it.outputs.all {
+                versionCodeOverride = appVersion.versionCode
+                versionNameOverride = appVersion.versionName
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: '*.jar')
+    implementation project(':library')
+    implementation Depends.support.leanback
+    implementation Depends.support.compatV7
+
+    // for Orma
+    implementation Depends.support.annotations
+    implementation Depends.support.compat
+
+    implementation Depends.glide.glide
+    implementation Depends.glide.okhttp3
+    implementation Depends.dagger.dagger
+    annotationProcessor Depends.dagger.compiler
+    kapt Depends.dagger.compiler
+    implementation Depends.rx.java
+    implementation Depends.rx.android
+    implementation Depends.orma.orma
+    annotationProcessor Depends.orma.compiler
+    kapt Depends.orma.compiler
+    debugImplementation Depends.leakcanary.debug
+    releaseImplementation Depends.leakcanary.release
+    testImplementation Depends.leakcanary.test
+    errorprone Depends.errorprone
+}
