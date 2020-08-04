@@ -1,4 +1,4 @@
-include ':app', ':library', ':sample'
+include ':app', ':library'
 
 def isCi = System.getenv().containsKey("CI")
 def hasCacheServer = hasProperty('cacheServerUri')

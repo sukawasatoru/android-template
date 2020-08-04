@@ -1,10 +1,16 @@
-apply plugin: 'com.android.application'
-apply plugin: 'versioning'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
 
 android {
     defaultConfig {
         applicationId 'jp.tinyport.tinyapplication'
-        versionCode appVersion.versionCode
-        versionName appVersion.versionName
+        versionCode 1
+        versionName '0.1.0'
     }
+}
+
+dependencies {
+    implementation Depends.kotlin
 }

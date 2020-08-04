@@ -10,15 +10,12 @@ buildscript {
     dependencies {
         classpath Depends.gradle.android
         classpath Depends.gradle.kotlin
-        classpath Depends.gradle.errorprone
     }
 }
 
 plugins {
-    id 'org.sonarqube' version '2.6.2'
+    id 'org.sonarqube' version '3.0'
 }
-
-apply plugin: 'versioning'
 
 sonarqube {
     properties {
@@ -55,12 +52,27 @@ def setupAndroidPlugin = { isCi, project ->
     }
 }.curry(System.getenv('CI') == 'true')
 
+def setupKotlinAndroidPlugin = { project ->
+    project.android {
+        sourceSets {
+            main.java.srcDirs += 'src/main/kotlin'
+        }
+
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8
+        }
+    }
+}
+
 subprojects {
     project.plugins.whenPluginAdded {
         switch (it.class.name) {
             case 'com.android.build.gradle.AppPlugin':
             case 'com.android.build.gradle.LibraryPlugin':
                 setupAndroidPlugin(project)
+                break
+            case 'org.jetbrains.kotlin.gradle.plugin.KotlinAndroidPluginWrapper':
+                setupKotlinAndroidPlugin(project)
                 break
             default:
                 break
