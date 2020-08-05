@@ -3,4 +3,7 @@ apply plugin: 'kotlin-android'
 
 dependencies {
     implementation Depends.kotlin
+    testImplementation Depends.test.junit
+    testImplementation Depends.test.truth
+    testImplementation Depends.test.truthJava8
 }
