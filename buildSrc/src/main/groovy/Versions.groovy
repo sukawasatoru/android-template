@@ -9,7 +9,7 @@ class Versions {
     }
 
     static class Manifest {
-        final compileSdk = 30
+        final compileSdk = 29
         final buildTools = '30.0.1'
         final minSdk = 24
         final targetSdk = 29

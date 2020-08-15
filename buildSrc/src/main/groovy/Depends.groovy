@@ -1,6 +1,6 @@
 class Depends {
     static final gradle = new Gradle()
-    static final kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$Versions.kotlin"
+    static final kotlin = new Kotlin()
     static final test = new Test()
 
     static class Gradle {
@@ -8,6 +8,12 @@ class Depends {
         final androidCacheFix =
                 "gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin:$Versions.gradle.androidCacheFix"
         final kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$Versions.kotlin"
+        final kotlinSerialization = "org.jetbrains.kotlin:kotlin-serialization:$Versions.kotlin"
+    }
+
+    static class Kotlin {
+        final stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$Versions.kotlin"
+        final serialization = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0"
     }
 
     static class Test {
