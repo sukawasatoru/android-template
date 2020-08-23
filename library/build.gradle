@@ -1,9 +1,0 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-
-dependencies {
-    implementation Depends.kotlin.stdlib
-    testImplementation Depends.test.junit
-    testImplementation Depends.test.truth
-    testImplementation Depends.test.truthJava8
-}
