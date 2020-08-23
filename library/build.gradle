@@ -4,6 +4,13 @@ plugins {
     id 'org.gradle.android.cache-fix'
 }
 
+android {
+    buildFeatures {
+        buildConfig false
+        resValues false
+    }
+}
+
 dependencies {
     implementation Depends.kotlin.stdlib
     testImplementation Depends.test.junit
