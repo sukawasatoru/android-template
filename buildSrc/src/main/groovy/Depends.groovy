@@ -5,9 +5,16 @@ class Depends {
 
     static class AndroidX {
         final constraint = 'androidx.constraintlayout:constraintlayout:1.1.3'
+        final roomVersion = '2.2.5'
+        final roomCompiler = "androidx.room:room-compiler:$roomVersion"
+        final roomKtx = "androidx.room:room-ktx:$roomVersion"
+        final roomRuntime = "androidx.room:room-runtime:$roomVersion"
     }
 
     static class Kotlin {
+        final coroutinesVersion = '1.3.9'
+        final coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+        final coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
         final version = '1.3.72'
         final stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$version"
         final serialization = 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0'
