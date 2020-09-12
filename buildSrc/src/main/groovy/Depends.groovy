@@ -25,7 +25,9 @@ class Depends {
         final hiltVersion = '2.29-alpha'
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
-        final protobufLite = 'com.google.protobuf:protobuf-javalite:3.13.0'
+        final protobufVersion = '3.13.0'
+        final protoc = "com.google.protobuf:protoc:$protobufVersion"
+        final protobufLite = "com.google.protobuf:protobuf-javalite:$protobufVersion"
     }
 
     static class Kotlin {

@@ -20,9 +20,9 @@ Library
 
 - androidx.*: https://developer.android.com/jetpack/androidx/versions
 - com.android.tools:desugar_jdk_libs https://mvnrepository.com/artifact/com.android.tools/desugar_jdk_libs_configuration
-- com.google.truth:truth: https://github.com/google/truth
 - com.google.dagger: https://github.com/google/dagger
-- com.google.protobuf:protobuf-javalite: https://github.com/protocolbuffers/protobuf
+- com.google.truth:truth: https://github.com/google/truth
+- com.google.protobuf:*: https://github.com/protocolbuffers/protobuf
 - org.jetbrains.kotlinx:kotlinx-coroutines-*: https://github.com/Kotlin/kotlinx.coroutines
 - org.jetbrains.kotlin:kotlin-*: https://github.com/JetBrains/kotlin
 - org.jetbrains.kotlinx:kotlinx-serialization-*: https://github.com/Kotlin/kotlinx.serialization

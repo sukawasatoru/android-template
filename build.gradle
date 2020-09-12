@@ -28,19 +28,19 @@ sonarqube {
 allprojects {
     repositories {
         google()
-        mavenCentral()
         jcenter()
+        mavenCentral()
     }
 }
 
 def setupAndroidPlugin = { isCi, project ->
     project.android {
-        compileSdkVersion 29
+        compileSdkVersion 30
         buildToolsVersion '30.0.2'
 
         defaultConfig {
             minSdkVersion 24
-            targetSdkVersion 29
+            targetSdkVersion 30
         }
 
         dexOptions {
