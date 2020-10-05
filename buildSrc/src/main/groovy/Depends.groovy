@@ -2,6 +2,7 @@ class Depends {
     static final androidx = new AndroidX()
     static final google = new Google()
     static final kotlin = new Kotlin()
+    static final okhttp = 'com.squareup.okhttp3:okhttp:4.9.0'
     static final test = new Test()
 
     static class AndroidX {
