@@ -2,10 +2,12 @@ class Depends {
     static final androidx = new AndroidX()
     static final google = new Google()
     static final kotlin = new Kotlin()
+    static final kotlinResult = 'com.michael-bull.kotlin-result:kotlin-result:1.1.9'
     static final okhttp = 'com.squareup.okhttp3:okhttp:4.9.0'
     static final test = new Test()
 
     static class AndroidX {
+        final activity = 'androidx.activity:activity-ktx:1.1.0'
         final annotation = 'androidx.annotation:annotation:1.1.0'
         final constraint = 'androidx.constraintlayout:constraintlayout:2.0.0'
         final datastore = 'androidx.datastore:datastore-core:1.0.0-alpha01'
@@ -30,6 +32,7 @@ class Depends {
         final hiltVersion = '2.29-alpha'
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
+        final material = 'com.google.android.material:material:1.2.1'
         final protobufVersion = '3.13.0'
         final protoc = "com.google.protobuf:protoc:$protobufVersion"
         final protobufLite = "com.google.protobuf:protobuf-javalite:$protobufVersion"
