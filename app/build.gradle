@@ -12,6 +12,10 @@ android {
         signingConfig signingConfigs.debug
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     dependenciesInfo {
         includeInApk = false
         includeInBundle = false
@@ -22,6 +26,9 @@ android {
             storeFile file("$rootDir/debug.p12")
         }
     }
+
+    // workaround for IDE.
+    sourceSets.debug.java.srcDirs += 'build/generated/data_binding_base_class_source_out/debug/out'
 }
 
 dependencies {
