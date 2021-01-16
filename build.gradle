@@ -15,9 +15,9 @@ buildscript {
 plugins {
     id 'com.google.protobuf' version '0.8.14' apply false
     id 'org.gradle.android.cache-fix' version '1.0.14' apply false
-    id 'org.jetbrains.kotlin.android' version '1.4.20' apply false
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.4.20' apply false
-    id 'org.sonarqube' version '3.0'
+    id 'org.jetbrains.kotlin.android' version '1.4.21-2' apply false
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.4.21-2' apply false
+    id 'org.sonarqube' version '3.1'
 }
 
 sonarqube {
@@ -37,7 +37,7 @@ allprojects {
 def setupAndroidPlugin = { isCi, project ->
     project.android {
         compileSdkVersion 30
-        buildToolsVersion '30.0.2'
+        buildToolsVersion '30.0.3'
 
         defaultConfig {
             minSdkVersion 24

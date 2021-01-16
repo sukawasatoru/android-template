@@ -38,7 +38,7 @@ class Depends {
         final coroutinesVersion = '1.4.2'
         final coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
         final coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.20'
+        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.21-2'
         final serialization = 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0.1'
     }
 
