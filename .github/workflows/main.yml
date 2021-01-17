@@ -8,8 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/sukawasatoru/toolchain-android:1.0
+    container: ghcr.io/sukawasatoru/toolchain-android:1.1
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: ./gradlew build
+        run: ./gradlew --info build
