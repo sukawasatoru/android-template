@@ -25,7 +25,7 @@ class Depends {
 
     static class Google {
         final androidOssLicenses = 'com.google.android.gms:play-services-oss-licenses:17.0.0'
-        final hiltVersion = '2.30.1-alpha'
+        final hiltVersion = '2.31.2-alpha'
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         final material = 'com.google.android.material:material:1.2.1'
