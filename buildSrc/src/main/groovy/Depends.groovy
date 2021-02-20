@@ -17,6 +17,7 @@ class Depends {
         final navigationVersion = '2.3.3'
         final navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
         final navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+        final recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
         final roomVersion = '2.2.5'
         final roomCompiler = "androidx.room:room-compiler:$roomVersion"
         final roomKtx = "androidx.room:room-ktx:$roomVersion"
@@ -25,11 +26,11 @@ class Depends {
 
     static class Google {
         final androidOssLicenses = 'com.google.android.gms:play-services-oss-licenses:17.0.0'
-        final hiltVersion = '2.31.2-alpha'
+        final hiltVersion = '2.32-alpha'
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         final material = 'com.google.android.material:material:1.2.1'
-        final protobufVersion = '3.13.0'
+        final protobufVersion = '3.15.1'
         final protoc = "com.google.protobuf:protoc:$protobufVersion"
         final protobufLite = "com.google.protobuf:protobuf-javalite:$protobufVersion"
     }
@@ -38,8 +39,8 @@ class Depends {
         final coroutinesVersion = '1.4.2'
         final coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
         final coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.21-2'
-        final serialization = 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0.1'
+        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.30'
+        final serialization = 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.1.0'
     }
 
     static class Test {
