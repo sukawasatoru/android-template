@@ -30,7 +30,7 @@ class Depends {
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         final material = 'com.google.android.material:material:1.2.1'
-        final protobufVersion = '3.15.1'
+        final protobufVersion = '3.15.3'
         final protoc = "com.google.protobuf:protoc:$protobufVersion"
         final protobufLite = "com.google.protobuf:protobuf-javalite:$protobufVersion"
     }
@@ -39,7 +39,7 @@ class Depends {
         final coroutinesVersion = '1.4.2'
         final coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
         final coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.30'
+        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.31'
         final serialization = 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.1.0'
     }
 
