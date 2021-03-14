@@ -1,14 +1,13 @@
 buildscript {
     repositories {
         google()
-        jcenter()
-        mavenCentral()
     }
 
     dependencies {
-        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.3'
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.4'
         classpath 'com.android.tools.build:gradle:4.0.2'
-        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.32-alpha'
+        classpath 'com.google.android.gms:oss-licenses-plugin:0.10.2'
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.33-beta'
     }
 }
 
@@ -28,8 +27,12 @@ sonarqube {
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        jcenter {
+            content {
+                includeGroup('org.jetbrains.trove4j')
+            }
+        }
     }
 }
 

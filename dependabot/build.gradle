@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+}
+
+android {
+    defaultConfig {
+        applicationId 'jp.tinyport.dependabot'
+        versionCode 1
+        versionName '0.1.0'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/gradle/incremental.annotation.processors'
+    }
+}
+
+dependencies {
+    implementation Depends.androidx.activity
+    implementation Depends.androidx.annotation
+    implementation Depends.androidx.constraint
+    implementation Depends.androidx.datastore
+    implementation Depends.androidx.fragment
+    implementation Depends.androidx.leanback
+    implementation Depends.androidx.lifecycleLiveData
+    implementation Depends.androidx.lifecycleRuntime
+    implementation Depends.androidx.navigationFragment
+    implementation Depends.androidx.navigationUi
+    implementation Depends.androidx.recyclerView
+    implementation Depends.androidx.roomCompiler
+    implementation Depends.androidx.roomKtx
+    implementation Depends.androidx.roomRuntime
+    implementation Depends.google.androidOssLicenses
+    implementation Depends.google.hilt
+    implementation Depends.google.hiltCompiler
+    implementation Depends.google.material
+    implementation Depends.google.protoc
+    implementation Depends.google.protobufLite
+    implementation Depends.kotlin.coroutines
+    implementation Depends.kotlin.coroutinesAndroid
+    implementation Depends.kotlin.serializationJson
+    implementation Depends.kotlinResult
+    implementation Depends.okhttp
+    implementation Depends.kotlin.stdlib
+    testImplementation Depends.test.androidJunit4Ktx
+    testImplementation Depends.test.robolectric
+    testImplementation Depends.test.testCoreKtx
+    testImplementation Depends.test.testRunner
+    testImplementation Depends.test.testRules
+    testImplementation Depends.test.truth
+    testImplementation Depends.test.truthJava8
+}
