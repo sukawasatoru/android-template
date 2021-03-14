@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
+        env:
+          JAVA_OPTS: -Xmx2g
         run: |
-          ./gradlew --info --stacktrace bundle
-          ./gradlew --info --stacktrace check
+          ./gradlew --info --stacktrace build
