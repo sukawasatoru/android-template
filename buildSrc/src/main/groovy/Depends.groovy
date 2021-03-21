@@ -1,6 +1,7 @@
 class Depends {
     static final androidx = new AndroidX()
     static final apollo = new Apollo()
+    static final glide = new Glide()
     static final google = new Google()
     static final kotlin = new Kotlin()
     static final kotlinResult = 'com.michael-bull.kotlin-result:kotlin-result:1.1.9'
@@ -13,6 +14,7 @@ class Depends {
         final annotation = 'androidx.annotation:annotation:1.1.0'
         final appcompat = 'androidx.appcompat:appcompat:1.2.0'
         final constraint = 'androidx.constraintlayout:constraintlayout:2.0.4'
+        final core = 'androidx.core:core-ktx:1.3.2'
         final datastore = 'androidx.datastore:datastore-core:1.0.0-alpha08'
         final fragment = 'androidx.fragment:fragment-ktx:1.3.1'
         final leanback = 'androidx.leanback:leanback:1.0.0'
@@ -40,6 +42,12 @@ class Depends {
         final cacheSqlite = "com.apollographql.apollo:apollo-normalized-cache-sqlite:$version"
         final coroutine = "com.apollographql.apollo:apollo-coroutines-support:$version"
         final runtime = "com.apollographql.apollo:apollo-runtime:$version"
+    }
+
+    static class Glide {
+        final version = '4.12.0'
+        final glide = "com.github.bumptech.glide:glide:$version"
+        final compiler = "com.github.bumptech.glide:compiler:$version"
     }
 
     static class Google {
