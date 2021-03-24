@@ -15,7 +15,7 @@ class Depends {
         final appcompat = 'androidx.appcompat:appcompat:1.2.0'
         final constraint = 'androidx.constraintlayout:constraintlayout:2.0.4'
         final core = 'androidx.core:core-ktx:1.3.2'
-        final datastore = 'androidx.datastore:datastore-core:1.0.0-alpha08'
+        final datastore = 'androidx.datastore:datastore:1.0.0-alpha08'
         final fragment = 'androidx.fragment:fragment-ktx:1.3.1'
         final leanback = 'androidx.leanback:leanback:1.0.0'
         final lifecycleVersion = '2.3.0'
@@ -36,7 +36,7 @@ class Depends {
     }
 
     static class Apollo {
-        final version = '2.5.4'
+        final version = '2.5.5'
         final androidSupport = "com.apollographql.apollo:apollo-android-support:$version"
         final api = "com.apollographql.apollo:apollo-api:$version"
         final cacheSqlite = "com.apollographql.apollo:apollo-normalized-cache-sqlite:$version"
@@ -56,7 +56,7 @@ class Depends {
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         final material = 'com.google.android.material:material:1.2.1'
-        final protobufVersion = '3.15.3'
+        final protobufVersion = '3.15.6'
         final protoc = "com.google.protobuf:protoc:$protobufVersion"
         final protobufLite = "com.google.protobuf:protobuf-javalite:$protobufVersion"
     }
@@ -66,7 +66,7 @@ class Depends {
         final coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
         final coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
         final serializationJson = 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0'
-        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.31'
+        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.32'
     }
 
     static class Test {
