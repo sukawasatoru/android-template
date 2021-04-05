@@ -56,7 +56,7 @@ class Depends {
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         final material = 'com.google.android.material:material:1.2.1'
-        final protobufVersion = '3.15.6'
+        final protobufVersion = '3.15.7'
         final protoc = "com.google.protobuf:protoc:$protobufVersion"
         final protobufLite = "com.google.protobuf:protobuf-javalite:$protobufVersion"
     }
