@@ -25,7 +25,7 @@ class Depends {
         final lifecycleService = "androidx.lifecycle:lifecycle-service:$lifecycleVersion"
         final lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
         final lifecycleViewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
-        final navigationVersion = '2.3.4'
+        final navigationVersion = '2.3.5'
         final navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
         final navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
         final recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
@@ -52,11 +52,11 @@ class Depends {
 
     static class Google {
         final androidOssLicenses = 'com.google.android.gms:play-services-oss-licenses:17.0.0'
-        final hiltVersion = '2.33-beta'
+        final hiltVersion = '2.34-beta'
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         final material = 'com.google.android.material:material:1.2.1'
-        final protobufVersion = '3.15.7'
+        final protobufVersion = '3.15.8'
         final protoc = "com.google.protobuf:protoc:$protobufVersion"
         final protobufLite = "com.google.protobuf:protobuf-javalite:$protobufVersion"
     }
