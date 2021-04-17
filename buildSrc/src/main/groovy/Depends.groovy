@@ -36,7 +36,7 @@ class Depends {
     }
 
     static class Apollo {
-        final version = '2.5.5'
+        final version = '2.5.6'
         final androidSupport = "com.apollographql.apollo:apollo-android-support:$version"
         final api = "com.apollographql.apollo:apollo-api:$version"
         final cacheSqlite = "com.apollographql.apollo:apollo-normalized-cache-sqlite:$version"
@@ -52,7 +52,7 @@ class Depends {
 
     static class Google {
         final androidOssLicenses = 'com.google.android.gms:play-services-oss-licenses:17.0.0'
-        final hiltVersion = '2.34-beta'
+        final hiltVersion = '2.34.1-beta'
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         final material = 'com.google.android.material:material:1.2.1'

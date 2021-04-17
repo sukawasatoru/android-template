@@ -31,6 +31,7 @@ dependencies {
     implementation Depends.androidx.annotation
     implementation Depends.androidx.appcompat
     implementation Depends.androidx.constraint
+    implementation Depends.androidx.core
     implementation Depends.androidx.datastore
     implementation Depends.androidx.fragment
     implementation Depends.androidx.leanback
@@ -49,6 +50,7 @@ dependencies {
     implementation Depends.apollo.cacheSqlite
     implementation Depends.apollo.coroutine
     implementation Depends.apollo.runtime
+    implementation Depends.glide.glide
     implementation Depends.google.androidOssLicenses
     implementation Depends.google.hilt
     implementation Depends.google.material
@@ -70,6 +72,7 @@ dependencies {
     testImplementation Depends.test.truthJava8
     kapt Depends.androidx.roomCompiler
     kapt Depends.androidx.lifecycleCompiler
+    kapt Depends.glide.compiler
     kapt Depends.google.hiltCompiler
 }
 
