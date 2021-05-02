@@ -52,7 +52,7 @@ class Depends {
 
     static class Google {
         final androidOssLicenses = 'com.google.android.gms:play-services-oss-licenses:17.0.0'
-        final hiltVersion = '2.34.1-beta'
+        final hiltVersion = '2.35.1'
         final hilt = "com.google.dagger:hilt-android:$hiltVersion"
         final hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
         final material = 'com.google.android.material:material:1.2.1'
@@ -66,7 +66,7 @@ class Depends {
         final coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
         final coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
         final serializationJson = 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0'
-        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.4.32'
+        final stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.5.0'
     }
 
     static class Test {
