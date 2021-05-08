@@ -28,11 +28,16 @@ class Depends {
         final navigationVersion = '2.3.5'
         final navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
         final navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+        final pagingVersion = '3.0.0'
+        final pagingCommon = "androidx.paging:paging-common-ktx:$pagingVersion"
+        final pagingRuntime = "androidx.paging:paging-runtime-ktx:$pagingVersion"
         final recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
-        final roomVersion = '2.2.6'
+        final roomVersion = '2.3.0'
         final roomCompiler = "androidx.room:room-compiler:$roomVersion"
         final roomKtx = "androidx.room:room-ktx:$roomVersion"
         final roomRuntime = "androidx.room:room-runtime:$roomVersion"
+        final swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+        final viewPager2 = 'androidx.viewpager2:viewpager2:1.0.0'
     }
 
     static class Apollo {
@@ -46,8 +51,9 @@ class Depends {
 
     static class Glide {
         final version = '4.12.0'
-        final glide = "com.github.bumptech.glide:glide:$version"
         final compiler = "com.github.bumptech.glide:compiler:$version"
+        final glide = "com.github.bumptech.glide:glide:$version"
+        final okhttp3Integration = "com.github.bumptech.glide:okhttp3-integration:$version"
     }
 
     static class Google {
