@@ -5,5 +5,10 @@ updates:
   - package-ecosystem: gradle
     directory: "/"
     schedule:
-      interval: daily
-      timezone: Asia/Tokyo
+      interval: "daily"
+      timezone: "Asia/Tokyo"
+    ignore:
+      - dependency-name: "com.android.tools.build:gradle"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"

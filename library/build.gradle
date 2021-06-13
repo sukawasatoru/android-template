@@ -12,8 +12,6 @@ android {
 }
 
 dependencies {
-    implementation Depends.kotlin.stdlib
-    testImplementation Depends.test.junit
-    testImplementation Depends.test.truth
-    testImplementation Depends.test.truthJava8
+    testImplementation libs.androidx.testJunit
+    testImplementation libs.androidx.testTruth
 }

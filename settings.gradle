@@ -1,5 +1,7 @@
+enableFeaturePreview "TYPESAFE_PROJECT_ACCESSORS"
+enableFeaturePreview "VERSION_CATALOGS"
+
 include ':app'
-include ':dependabot'
 include ':library'
 
 def isCi = System.getenv().containsKey("CI")

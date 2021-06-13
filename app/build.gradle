@@ -32,5 +32,5 @@ android {
 }
 
 dependencies {
-    implementation Depends.kotlin.stdlib
+    // do something.
 }
