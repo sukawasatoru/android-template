@@ -13,7 +13,12 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
+        buildConfig false
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.0.2'
     }
 
     dependenciesInfo {
@@ -26,11 +31,10 @@ android {
             storeFile file("$rootDir/debug.p12")
         }
     }
-
-    // workaround for IDE.
-    sourceSets.debug.java.srcDirs += 'build/generated/data_binding_base_class_source_out/debug/out'
 }
 
 dependencies {
-    // do something.
+    implementation libs.androidx.activityCompose
+    implementation libs.androidx.composeUiTooling
+    implementation libs.androidx.composeMaterial
 }
