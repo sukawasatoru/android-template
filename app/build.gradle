@@ -18,7 +18,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion '1.0.2'
+        kotlinCompilerExtensionVersion '1.0.3'
     }
 
     dependenciesInfo {
@@ -37,4 +37,5 @@ dependencies {
     implementation libs.androidx.activityCompose
     implementation libs.androidx.composeUiTooling
     implementation libs.androidx.composeMaterial
+    implementation libs.androidx.profileInstaller
 }

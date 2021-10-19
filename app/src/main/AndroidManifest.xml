@@ -10,6 +10,7 @@
         android:theme="@android:style/Theme.Material">
         <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:label="Tiny MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
