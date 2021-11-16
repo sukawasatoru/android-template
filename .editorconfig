@@ -60,8 +60,11 @@ insert_final_newline = true
 max_line_length = off
 
 [*.kt]
+indent_style = space
 end_of_line = lf
 charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
 max_line_length = 120
 ij_kotlin_imports_layout=*
 

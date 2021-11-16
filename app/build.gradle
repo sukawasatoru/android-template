@@ -18,12 +18,16 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion '1.0.3'
+        kotlinCompilerExtensionVersion '1.1.0-beta02'
     }
 
     dependenciesInfo {
         includeInApk = false
         includeInBundle = false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
     }
 
     signingConfigs {
