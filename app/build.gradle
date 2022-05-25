@@ -38,8 +38,8 @@ android {
 }
 
 dependencies {
-    implementation libs.androidx.activityCompose
-    implementation libs.androidx.composeUiTooling
-    implementation libs.androidx.composeMaterial
+    implementation libs.androidx.activity.compose
+    implementation libs.androidx.compose.uiTooling
+    implementation libs.androidx.compose.material.material
     implementation libs.androidx.profileInstaller
 }

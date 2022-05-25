@@ -4,18 +4,14 @@ Android Template
 Gradle Plugin (old)
 -------------------
 
-- androidx.navigation:navigation-safe-args-gradle-plugin: https://maven.google.com/web/index.html?q=androidx.navigation#androidx.navigation:navigation-safe-args-gradle-plugin
 - com.android.tools.build:gradle: https://developer.android.com/studio/releases/gradle-plugin https://maven.google.com/web/index.html?q=com.android.tools.build#com.android.tools.build:gradle
-- com.google.android.gms:oss-licenses-plugin: https://maven.google.com/web/index.html?q=com.google.android.gms#com.google.android.gms:oss-licenses-plugin
 - com.google.dagger:hilt-android-gradle-plugin: https://github.com/google/dagger
 
 Gradle Plugin
 -------------
 
 - com.google.protobuf: https://github.com/google/protobuf-gradle-plugin
-- org.gradle.android.cache-fix: https://plugins.gradle.org/plugin/org.gradle.android.cache-fix
 - org.jetbrains.kotlin.*: https://github.com/JetBrains/kotlin
-- org.sonarqube: https://plugins.gradle.org/plugin/org.sonarqube
 
 Library
 -------

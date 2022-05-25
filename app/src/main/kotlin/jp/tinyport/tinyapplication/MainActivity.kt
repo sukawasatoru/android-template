@@ -1,7 +1,7 @@
 package jp.tinyport.tinyapplication
 
-import android.app.Activity
+import androidx.activity.ComponentActivity
 
-class MainActivity : Activity() {
+class MainActivity : ComponentActivity() {
     // TODO:
 }

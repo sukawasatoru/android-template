@@ -12,6 +12,6 @@ android {
 }
 
 dependencies {
-    testImplementation libs.androidx.testJunit
-    testImplementation libs.androidx.testTruth
+    testImplementation libs.androidx.test.junit
+    testImplementation libs.androidx.test.truth
 }
