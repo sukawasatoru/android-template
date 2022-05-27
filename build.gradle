@@ -33,14 +33,14 @@ allprojects {
     }
 }
 
-def setupAndroidPlugin = { project ->
+def setupAndroidPlugin = { Project project ->
     project.android {
-        compileSdk 32
+        compileSdk 31
         buildToolsVersion '32.0.0'
 
         defaultConfig {
             minSdk 24
-            targetSdk 32
+            targetSdk 31
         }
 
         compileOptions {
@@ -62,7 +62,7 @@ def setupAndroidPlugin = { project ->
     }
 }
 
-def setupKotlinAndroidPlugin = { project ->
+def setupKotlinAndroidPlugin = { Project project ->
     project.android {
         sourceSets.each {
             it.java.srcDirs += "src/${it.name}/kotlin"
@@ -87,7 +87,7 @@ def setupSpotlessPlugin = { Project project ->
 }
 
 subprojects {
-    project.plugins.whenPluginAdded {
+    plugins.whenPluginAdded {
         switch (it.class.name) {
             case 'com.android.build.gradle.AppPlugin':
             case 'com.android.build.gradle.LibraryPlugin':
