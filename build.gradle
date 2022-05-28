@@ -18,8 +18,8 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.10' apply false
 }
 
-allprojects {
-    repositories {
+def setupAndroidPlugin = { Project project ->
+    project.repositories {
         google()
         mavenCentral()
 
@@ -31,9 +31,7 @@ allprojects {
             }
         }
     }
-}
 
-def setupAndroidPlugin = { Project project ->
     project.android {
         compileSdk 31
         buildToolsVersion '32.0.0'
@@ -81,6 +79,7 @@ def setupSpotlessPlugin = { Project project ->
             target project.fileTree(dir: 'src', include: '**/*.kt', exclude: ['test/**/*.kt', 'androidTest/**/*.kt'])
             ktlint('0.45.2').userData([
                 android: 'true',
+                'max-line-length': '120',
             ])
         }
     }
