@@ -1,7 +1,7 @@
 plugins {
-    id 'com.android.application'
-    id 'com.diffplug.spotless'
-    id 'kotlin-android'
+    alias libs.plugins.android.application
+    alias libs.plugins.kotlin.android
+    alias libs.plugins.spotless
 }
 
 android {
@@ -17,8 +17,17 @@ android {
         compose true
     }
 
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                'proguard-rules.pro'
+
+        }
+    }
+
     composeOptions {
-        kotlinCompilerExtensionVersion '1.1.1'
+        // https://developer.android.com/jetpack/androidx/releases/compose-kotlin#pre-release_kotlin_compatibility
+        kotlinCompilerExtensionVersion '1.2.0-rc02'
     }
 
     dependenciesInfo {
@@ -39,6 +48,7 @@ android {
 
 dependencies {
     implementation libs.androidx.activity.compose
+    implementation platform(libs.androidx.compose.bom)
     implementation libs.androidx.compose.uiTooling
     implementation libs.androidx.compose.material.material
     implementation libs.androidx.profileInstaller
