@@ -102,6 +102,7 @@ subprojects {
     }
 }
 
+// TODO: delete this task after AGPv7.4.x
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

@@ -5,6 +5,8 @@ plugins {
 }
 
 android {
+    namespace 'jp.tinyport.tinyapplication'
+
     defaultConfig {
         applicationId 'jp.tinyport.tinyapplication'
         versionCode 1
