@@ -7,6 +7,7 @@ buildscript {
 plugins {
     alias libs.plugins.android.application apply false
     alias libs.plugins.android.library apply false
+    alias libs.plugins.android.test apply false
     alias libs.plugins.apollo apply false
     alias libs.plugins.spotless apply false
     alias libs.plugins.protobuf apply false
@@ -88,6 +89,8 @@ subprojects {
             case 'com.android.build.gradle.AppPlugin':
                 // fallthrough.
             case 'com.android.build.gradle.LibraryPlugin':
+                // fallthrough.
+            case 'com.android.build.gradle.TestPlugin':
                 setupAndroidPlugin(project)
                 break
             case 'org.jetbrains.kotlin.gradle.plugin.KotlinAndroidPluginWrapper':

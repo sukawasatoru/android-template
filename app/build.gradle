@@ -24,6 +24,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
                 'proguard-rules.pro'
         }
+        benchmark {
+            initWith(release)
+            proguardFiles 'benchmark-rules.pro'
+        }
     }
 
     composeOptions {
