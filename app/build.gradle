@@ -3,6 +3,10 @@ plugins {
     alias libs.plugins.kotlin.android
 }
 
+kotlin {
+    jvmToolchain 17
+}
+
 android {
     namespace 'jp.tinyport.tinyapplication'
 
@@ -31,16 +35,17 @@ android {
 
     composeOptions {
         // https://developer.android.com/jetpack/androidx/releases/compose-kotlin#pre-release_kotlin_compatibility
-        kotlinCompilerExtensionVersion '1.2.0-rc02'
+        kotlinCompilerExtensionVersion '1.5.3'
     }
 
     dependenciesInfo {
         includeInApk = false
         includeInBundle = false
     }
-
     packagingOptions {
-        exclude 'META-INF/*.kotlin_module'
+        resources {
+            excludes += ['META-INF/*.kotlin_module']
+        }
     }
 
     signingConfigs {

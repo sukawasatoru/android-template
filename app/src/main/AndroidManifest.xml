@@ -20,11 +20,11 @@
         android:allowBackup="false"
         android:label="Tiny app"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Material">
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         <activity
+            android:launchMode="singleTask"
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="Tiny MainActivity">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

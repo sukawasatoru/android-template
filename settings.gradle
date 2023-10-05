@@ -6,6 +6,11 @@ pluginManagement {
     }
 }
 
+// plugins {
+//     // https://developer.android.com/reference/tools/gradle-api/8.0/com/android/build/api/dsl/SettingsExtension
+//     id 'com.android.settings' version '8.1.2'
+// }
+
 dependencyResolutionManagement {
     repositories {
         google()
@@ -13,8 +18,7 @@ dependencyResolutionManagement {
     }
 }
 
-enableFeaturePreview "TYPESAFE_PROJECT_ACCESSORS"
-enableFeaturePreview "VERSION_CATALOGS"
+enableFeaturePreview 'TYPESAFE_PROJECT_ACCESSORS'
 
 include ':app'
 include ':benchmark'

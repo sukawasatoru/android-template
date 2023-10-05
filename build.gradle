@@ -32,7 +32,7 @@ def setupAndroidPlugin = { Project project ->
 
     project.android {
         compileSdk 33
-        buildToolsVersion '33.0.2'
+        buildToolsVersion '34.0.0'
 
         defaultConfig {
             minSdk 24
@@ -41,8 +41,6 @@ def setupAndroidPlugin = { Project project ->
 
         compileOptions {
             coreLibraryDesugaringEnabled true
-            sourceCompatibility JavaVersion.VERSION_11
-            targetCompatibility JavaVersion.VERSION_11
         }
 
         lint {
@@ -70,7 +68,7 @@ def setupKotlinAndroidPlugin = { Project project ->
 
         kotlinOptions {
             freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
-            jvmTarget = JavaVersion.VERSION_11
+            jvmTarget = JavaVersion.VERSION_17
         }
     }
 }
