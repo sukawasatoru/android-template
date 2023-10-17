@@ -35,6 +35,6 @@ androidComponents {
 }
 
 dependencies {
-    implementation(libs.androidx.benchmark)
-    implementation(libs.androidx.test.junit)
+    implementation libs.androidx.benchmark
+    implementation libs.androidx.test.junit
 }
