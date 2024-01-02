@@ -56,7 +56,7 @@ def setupAndroidPlugin = { Project project ->
     }
 
     project.dependencies {
-        coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.2'
+        coreLibraryDesugaring libs.android.desugarJdkLibs
     }
 }
 
@@ -66,10 +66,6 @@ def setupKotlinAndroidPlugin = { Project project ->
     }
 
     project.android {
-        sourceSets.each {
-            it.java.srcDirs += "src/${it.name}/kotlin"
-        }
-
         kotlinOptions {
             freeCompilerArgs += '-opt-in=kotlin.RequiresOptIn'
         }
@@ -77,13 +73,13 @@ def setupKotlinAndroidPlugin = { Project project ->
 }
 
 // https://developer.android.com/kotlin/style-guide
-// https://pinterest.github.io/ktlint/install/integrations/#gradle-integration
+// https://pinterest.github.io/ktlint/latest/install/integrations/#custom-gradle-integration
 configurations {
     ktlint
 }
 
 dependencies {
-    ktlint('com.pinterest:ktlint:0.49.0') {
+    ktlint(libs.ktlint) {
         attributes {
             attribute(Bundling.BUNDLING_ATTRIBUTE, getObjects().named(Bundling, Bundling.EXTERNAL))
         }

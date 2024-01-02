@@ -7,7 +7,7 @@ androidx-paging = "3.1.1"
 androidx-room = "2.5.1"
 androidx-tv = "1.0.0-alpha05"
 androidx-work = "2.8.1"
-agp = "8.1.2"
+agp = "8.2.0"
 apollo = "2.5.14"
 exoplayer = "2.18.4"
 glide = "4.15.1"
@@ -31,6 +31,7 @@ androidx-swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
 accompanist-swipeRefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "accompanist" }
 androidOssLicenses = "com.google.android.gms:play-services-oss-licenses:17.0.0"
+android-desugarJdkLibs = "com.android.tools:desugar_jdk_libs:2.0.4"
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-benchmark = "androidx.benchmark:benchmark-macro-junit4:1.1.1"
 androidx-compose-bom = "androidx.compose:compose-bom:2023.01.00"
@@ -82,6 +83,7 @@ kotlinx-coroutines-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-corout
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutine" }
 kotlinx-serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0"
 kotlinResult = "com.michael-bull.kotlin-result:kotlin-result:1.1.16"
+ktlint = "com.pinterest.ktlint:ktlint-cli:1.1.0"
 ktor-bom = "io.ktor:ktor-bom:2.2.4"
 ktor-contentNegotiation.module = "io.ktor:ktor-client-content-negotiation"
 ktor-core.module = "io.ktor:ktor-client-core"
