@@ -6,7 +6,7 @@ plugins {
 android {
     namespace 'jp.tinyport.tinyapplication.macrobenchmark'
 
-    targetProjectPath = ':app'
+    targetProjectPath ':app'
     experimentalProperties['android.experimental.self-instrumenting'] = true
 
     defaultConfig {
@@ -16,7 +16,7 @@ android {
 
     buildTypes {
         benchmark {
-            initWith(debug)
+            initWith debug
             matchingFallbacks += 'release'
         }
     }

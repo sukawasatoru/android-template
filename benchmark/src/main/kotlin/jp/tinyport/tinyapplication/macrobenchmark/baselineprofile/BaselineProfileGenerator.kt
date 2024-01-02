@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 sukawasatoru
+ * Copyright 2023, 2024 sukawasatoru
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,20 @@
 
 package jp.tinyport.tinyapplication.macrobenchmark.baselineprofile
 
-import androidx.benchmark.macro.ExperimentalBaselineProfilesApi
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.benchmark.macro.junit4.BaselineProfileRule
 import org.junit.Rule
 import org.junit.Test
 
-@OptIn(ExperimentalBaselineProfilesApi::class)
+@RequiresApi(Build.VERSION_CODES.P)
 class BaselineProfileGenerator {
     @get:Rule
     val baselineProfileRule = BaselineProfileRule()
 
     @Test
     fun startup() {
-        baselineProfileRule.collectBaselineProfile("jp.tinyport.tinyapplication") {
+        baselineProfileRule.collect("jp.tinyport.tinyapplication") {
             startActivityAndWait()
         }
     }
