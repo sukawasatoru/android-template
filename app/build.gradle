@@ -25,7 +25,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            isDefault true
+        }
+
         release {
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
                 'proguard-rules.pro'
         }
@@ -39,9 +45,10 @@ android {
         includeInApk = false
         includeInBundle = false
     }
+
     packagingOptions {
         resources {
-            excludes += ['META-INF/*.kotlin_module']
+            excludes += ['META-INF/*.kotlin_module', 'DebugProbesKt.bin']
         }
     }
 

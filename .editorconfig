@@ -67,6 +67,13 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 max_line_length = 100
 ij_kotlin_imports_layout = *
+ktlint_code_style = android_studio
+ktlint_standard_function-expression-body = disabled
+ktlint_standard_trailing-comma-on-call-site = disabled
+ktlint_standard_trailing-comma-on-declaration-site = disabled
+ktlint_standard_class-signature = disabled
+ktlint_standard_property-naming = disabled
+ktlint_standard_no-wildcard-imports = disabled
 
 [**/{test,androidTest}/**/*.kt]
 disabled_rules = *

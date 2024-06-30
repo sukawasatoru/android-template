@@ -45,7 +45,11 @@ def setupAndroidPlugin = { Project project ->
         }
 
         lint {
-            error = ['CheckResult']
+            checkAllWarnings true
+            checkDependencies true
+            enable += 'WrongThreadInterprocedural'
+            disable += 'NewerVersionAvailable'
+            fatal += 'VisibleForTests'
         }
 
         signingConfigs {
@@ -95,6 +99,10 @@ def setupKtlint = { Project project ->
         classpath configurations.ktlint
         mainClass.set 'com.pinterest.ktlint.Main'
         args srcArgs
+    }
+
+    project.tasks.named("check") {
+        dependsOn project.tasks.named("ktlintCheck")
     }
 
     project.tasks.register('ktlintFormat', JavaExec) {
@@ -153,5 +161,7 @@ subprojects {
 }
 
 tasks.register('clean', Delete) {
+    group 'build'
+
     delete rootProject.layout.buildDirectory
 }
