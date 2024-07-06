@@ -1,18 +1,6 @@
 Android Template
 ================
 
-Gradle Plugin (old)
--------------------
-
-- com.android.tools.build:gradle: https://developer.android.com/studio/releases/gradle-plugin https://maven.google.com/web/index.html?q=com.android.tools.build#com.android.tools.build:gradle
-- com.google.dagger:hilt-android-gradle-plugin: https://github.com/google/dagger
-
-Gradle Plugin
--------------
-
-- com.google.protobuf: https://github.com/google/protobuf-gradle-plugin
-- org.jetbrains.kotlin.*: https://github.com/JetBrains/kotlin
-
 Library
 -------
 

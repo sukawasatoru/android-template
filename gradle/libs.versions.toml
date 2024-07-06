@@ -3,7 +3,7 @@ accompanist = "0.34.0"
 androidx-activity = "1.9.0"
 androidx-fragment = "1.8.1"
 androidx-hilt-work = "1.2.0"
-androidx-lifecycle = "2.8.2"
+androidx-lifecycle = "2.8.3"
 androidx-navigation = "2.7.7"
 androidx-paging = "3.3.0"
 androidx-room = "2.6.1"
@@ -85,11 +85,13 @@ dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = 
 dagger-hilt-core = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 dagger-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger" }
 dagger-hilt-test = { module = "com.google.dagger:hilt-android-testing", version.ref = "dagger" }
+firebase-bom = "com.google.firebase:firebase-bom:33.1.1"
+firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx" }
 kotlinx-coroutines-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutine" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutine" }
 kotlinx-serializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1"
 kotlinResult = "com.michael-bull.kotlin-result:kotlin-result:2.0.0"
-ktlint = "com.pinterest.ktlint:ktlint-cli:1.3.0"
+ktlint = "com.pinterest.ktlint:ktlint-cli:1.3.1"
 ktor-bom = "io.ktor:ktor-bom:2.3.12"
 ktor-contentNegotiation.module = "io.ktor:ktor-client-content-negotiation"
 ktor-core.module = "io.ktor:ktor-client-core"
@@ -115,6 +117,7 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-test = { id = "com.android.test", version.ref = "agp" }
 apollo = { id = "com.apollographql.apollo", version.ref = "apollo" }
+gms = "com.google.gms.google-services:4.4.2"
 ksp = "com.google.devtools.ksp:2.0.0-1.0.22"
 protobuf = "com.google.protobuf:0.9.4"
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
