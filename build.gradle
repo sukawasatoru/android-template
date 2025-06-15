@@ -1,3 +1,19 @@
+/*
+ * Copyright 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025 sukawasatoru
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 buildscript {
     dependencies {
         classpath libs.gms.ossLicenses.plugin
@@ -21,23 +37,15 @@ def setupAndroidPlugin = { Project project ->
     project.repositories {
         google()
         mavenCentral()
-
-        maven {
-            url 'https://maven.pkg.github.com/sukawasatoru/android-logger'
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-            }
-        }
     }
 
     project.android {
-        compileSdk 34
-        buildToolsVersion = '34.0.0'
+        compileSdk 36
+        buildToolsVersion = '36.0.0'
 
         defaultConfig {
             minSdk 24
-            targetSdk 34
+            targetSdk 36
         }
 
         compileOptions {
@@ -77,44 +85,6 @@ def setupKotlinAndroidPlugin = { Project project ->
     }
 }
 
-// https://developer.android.com/kotlin/style-guide
-// https://pinterest.github.io/ktlint/latest/install/integrations/#custom-gradle-integration
-configurations {
-    ktlint
-}
-
-dependencies {
-    ktlint(libs.ktlint) {
-        attributes {
-            attribute(Bundling.BUNDLING_ATTRIBUTE, getObjects().named(Bundling, Bundling.EXTERNAL))
-        }
-    }
-}
-
-def setupKtlint = { Project project ->
-    def srcArgs = ['src/**/*.kt', '!**/build/**', '!src/test/**', '!src/androidTest/**']
-    project.tasks.register('ktlintCheck', JavaExec) {
-        group 'verification'
-        description 'Check Kotlin code style.'
-        classpath configurations.ktlint
-        mainClass.set 'com.pinterest.ktlint.Main'
-        args srcArgs
-    }
-
-    project.tasks.named("check") {
-        dependsOn project.tasks.named("ktlintCheck")
-    }
-
-    project.tasks.register('ktlintFormat', JavaExec) {
-        group 'formatting'
-        description 'Fix Kotlin code style deviations.'
-        classpath configurations.ktlint
-        mainClass.set 'com.pinterest.ktlint.Main'
-        jvmArgs "--add-opens=java.base/java.lang=ALL-UNNAMED"
-        args(['-F'] + srcArgs)
-    }
-}
-
 def setupProtobufPlugin = { Project project ->
     project.dependencies {
         implementation libs.protobuf.lite
@@ -137,6 +107,20 @@ def setupProtobufPlugin = { Project project ->
     }
 }
 
+def setupHiltPlugin = { Project project ->
+    project.hilt {
+        enableAggregatingTask true
+    }
+
+    project.dependencies {
+        implementation libs.dagger.hilt.core
+        ksp libs.dagger.hilt.compiler
+
+        androidTestImplementation libs.dagger.hilt.test
+        kspAndroidTest libs.dagger.hilt.compiler
+    }
+}
+
 subprojects {
     plugins.whenPluginAdded {
         switch (it.class.name) {
@@ -149,10 +133,12 @@ subprojects {
                 break
             case 'org.jetbrains.kotlin.gradle.plugin.KotlinAndroidPluginWrapper':
                 setupKotlinAndroidPlugin(project)
-                setupKtlint(project)
                 break
             case 'com.google.protobuf.gradle.ProtobufPlugin':
                 setupProtobufPlugin(project)
+                break
+            case 'dagger.hilt.android.plugin.HiltGradlePlugin':
+                setupHiltPlugin(project)
                 break
             default:
                 break
