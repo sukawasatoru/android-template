@@ -44,12 +44,12 @@ def setupAndroidPlugin = { Project project ->
         buildToolsVersion = '36.0.0'
 
         defaultConfig {
-            minSdk 24
+            minSdk 33
             targetSdk 36
         }
 
         compileOptions {
-            coreLibraryDesugaringEnabled true
+            coreLibraryDesugaringEnabled false
         }
 
         lint {
@@ -68,9 +68,9 @@ def setupAndroidPlugin = { Project project ->
         }
     }
 
-    project.dependencies {
-        coreLibraryDesugaring libs.android.desugarJdkLibs
-    }
+    // project.dependencies {
+    //     coreLibraryDesugaring libs.android.desugarJdkLibs
+    // }
 }
 
 def setupKotlinAndroidPlugin = { Project project ->
